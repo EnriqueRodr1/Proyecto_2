@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pago de Socio - Odisea</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f6f6f6;
+    }
+
+    header {
+      background: white;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      height: 50px;
+    }
+
+    .form-container {
+      max-width: 600px;
+      margin: 60px auto;
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .form-container h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    select, input {
+      padding: 12px 16px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      transition: border-color 0.3s ease;
+    }
+
+    input:focus, select:focus {
+      border-color: #000;
+      outline: none;
+    }
+
+    button {
+      padding: 14px;
+      background: #000;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #333;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #000;
+      color: #fff;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html"><img src="logo.svg" alt="Logo" class="logo"></a>
+  </header>
+
+  <main class="form-container">
+    <h1>Pago de la Cuota</h1>
+    <form id="pago-form">
+      <select name="metodo" required>
+        <option value="" disabled selected>Selecciona un método de pago</option>
+        <option value="tarjeta">Tarjeta de Crédito</option>
+        <option value="paypal">PayPal</option>
+        <option value="bizum">Bizum</option>
+      </select>
+
+      <input type="text" name="titular" placeholder="Nombre del titular" required>
+      <input type="text" name="numero" placeholder="Número de tarjeta / cuenta / teléfono" required>
+      <input type="text" name="vencimiento" placeholder="Fecha de vencimiento (MM/AA)" required>
+      <input type="text" name="cvv" placeholder="CVV o código de seguridad" required>
+
+      <button type="submit">Realizar Pago</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>© 2025 Odisea. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    document.getElementById('pago-form').addEventListener('submit', function(e) {
+      e.preventDefault(); // Evita envío real
+      console.log("Pago realizado correctamente. Bienvenido a Odisea");
+      alert("Pago realizado correctamente. Bienvenido a Odisea");
+      window.location.href = "login.html";
+    });
+  </script>
+
+</body>
+</html>
